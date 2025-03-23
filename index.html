@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+  <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -405,22 +405,34 @@
         }
 
         // URL publicada de tu proyecto actual en Google Apps Script
-        const urlGoogleScript = "https://script.google.com/macros/s/AKfycbz0Szrz1QSA46lKQtewPbeSgc8VeNvZaZofysR7uXvZfYC5GdX6cAL9Lyc5r5Pz_Vo9/exec";
+        const urlGoogleScript = "https://script.google.com/macros/s/AKfycbyjYzBVJwSVy1AwHZoYrRJc_vzPf-FHCL7W2OVdgo41xIGKZYCNqnjT-NJ-1_bc3PI5/exec";
 
         fetch(urlGoogleScript, {
           method: "POST",
-          mode: "no-cors", // importante para Google Script
+          mode: "cors", // <-- Cambia a "cors"
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(datos),
         })
-          .then((response) => {
-            alert("✅ Escrito generado correctamente.");
-          })
-          .catch((error) => {
+          .then(response => response.json())
+          .then(data => {
+            const urlPDF = data.url;
+            descargarPDF(urlPDF); // descarga automáticamente
+      })
+          .catch(error => {
             alert("❌ Error generando escrito: " + error);
-          });
+  });
+}
+      // función para descargar PDF inmediatamente
+function descargarPDF(url) {
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "escrito.pdf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
 
         google.script.run
           .withSuccessHandler(function (urlPDF) {
