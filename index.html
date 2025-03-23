@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/style.css" />
+    <!-- Añadir esto claramente para convertirlo en PWA -->
+    <link rel="manifest" href="manifest.json" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  </head>
+  <body>
+    <h2>Generador de Escritos Judiciales</h2>
+    <form id="formulario">
+      <label>Tribunal:</label>
+      <select id="tribunal" required>
+        <option value="">Seleccione un tribunal</option>
+        <option value="1° Juzgado Civil de Santiago">
+          1° Juzgado Civil de Santiago
+        </option>
+        <option value="2° Juzgado Civil de Santiago">
+          2° Juzgado Civil de Santiago
+        </option>
+        <option value="3° Juzgado Civil de Santiago">
+          3° Juzgado Civil de Santiago
+        </option>
+        <option value="4° Juzgado Civil de Santiago">
+          4° Juzgado Civil de Santiago
+        </option>
+        <option value="5° Juzgado Civil de Santiago">
+          5° Juzgado Civil de Santiago
+        </option>
+        <option value="6° Juzgado Civil de Santiago">
+          6° Juzgado Civil de Santiago
+        </option>
+        <option value="7° Juzgado Civil de Santiago">
+          7° Juzgado Civil de Santiago
+        </option>
+        <option value="8° Juzgado Civil de Santiago">
+          8° Juzgado Civil de Santiago
+        </option>
+        <option value="9° Juzgado Civil de Santiago">
+          9° Juzgado Civil de Santiago
+        </option>
+        <option value="10° Juzgado Civil de Santiago">
+          10° Juzgado Civil de Santiago
+        </option>
+        <option value="11° Juzgado Civil de Santiago">
+          11° Juzgado Civil de Santiago
+        </option>
+        <option value="12° Juzgado Civil de Santiago">
+          12° Juzgado Civil de Santiago
+        </option>
+        <option value="13° Juzgado Civil de Santiago">
+          13° Juzgado Civil de Santiago
+        </option>
+        <option value="14° Juzgado Civil de Santiago">
+          14° Juzgado Civil de Santiago
+        </option>
+        <option value="15° Juzgado Civil de Santiago">
+          15° Juzgado Civil de Santiago
+        </option>
+        <option value="16° Juzgado Civil de Santiago">
+          16° Juzgado Civil de Santiago
+        </option>
+        <option value="17° Juzgado Civil de Santiago">
+          17° Juzgado Civil de Santiago
+        </option>
+        <option value="18° Juzgado Civil de Santiago">
+          18° Juzgado Civil de Santiago
+        </option>
+        <option value="19° Juzgado Civil de Santiago">
+          19° Juzgado Civil de Santiago
+        </option>
+        <option value="20° Juzgado Civil de Santiago">
+          20° Juzgado Civil de Santiago
+        </option>
+        <option value="21° Juzgado Civil de Santiago">
+          21° Juzgado Civil de Santiago
+        </option>
+        <option value="22° Juzgado Civil de Santiago">
+          22° Juzgado Civil de Santiago
+        </option>
+        <option value="23° Juzgado Civil de Santiago">
+          23° Juzgado Civil de Santiago
+        </option>
+        <option value="24° Juzgado Civil de Santiago">
+          24° Juzgado Civil de Santiago
+        </option>
+        <option value="25° Juzgado Civil de Santiago">
+          25° Juzgado Civil de Santiago
+        </option>
+        <option value="26° Juzgado Civil de Santiago">
+          26° Juzgado Civil de Santiago
+        </option>
+        <option value="27° Juzgado Civil de Santiago">
+          27° Juzgado Civil de Santiago
+        </option>
+        <option value="28° Juzgado Civil de Santiago">
+          28° Juzgado Civil de Santiago
+        </option>
+        <option value="29° Juzgado Civil de Santiago">
+          29° Juzgado Civil de Santiago
+        </option>
+        <option value="30° Juzgado Civil de Santiago">
+          30° Juzgado Civil de Santiago
+        </option>
+        <option value="Juzgado de Letras de Colina">
+          Juzgado de Letras de Colina
+        </option>
+        <option value="1° Juzgado Civil de San Miguel">
+          1° Juzgado Civil de San Miguel
+        </option>
+        <option value="2° Juzgado Civil de San Miguel">
+          2° Juzgado Civil de San Miguel
+        </option>
+        <option value="3° Juzgado Civil de San Miguel">
+          3° Juzgado Civil de San Miguel
+        </option>
+        <option value="4° Juzgado Civil de San Miguel">
+          4° Juzgado Civil de San Miguel
+        </option>
+        <option value="1° Juzgado de Letras de San Bernardo">
+          1° Juzgado de Letras de San Bernardo
+        </option>
+        <option value="2° Juzgado de Letras de San Bernardo">
+          2° Juzgado de Letras de San Bernardo
+        </option>
+        <option value="1° Juzgado de Letras de Buin">
+          1° Juzgado de Letras de Buin
+        </option>
+        <option value="2° Juzgado de Letras de buin">
+          2° Juzgado de Letras de Buin
+        </option>
+        <option value="1° Juzgado de Letras de Melipilla">
+          1° Juzgado de Letras de Melipilla
+        </option>
+        <option value="1° Juzgado de Letras de Talagante">
+          1° Juzgado de Letras de Talagante
+        </option>
+        <option value="2° Juzgado de Letras de Talagante">
+          2° Juzgado de Letras de Talagante
+        </option>
+        <option value="Juzgado de Letras de Peñaflor">
+          Juzgado de Letras de Peñaflor
+        </option>
+      </select>
+
+      <label>Rol de Causa:</label>
+      <input type="text" id="rolCausa" required />
+
+      <label>Caratulado:</label>
+      <input type="text" id="caratulado" required />
+
+      <label>Tipo de Escrito:</label>
+      <select id="tipoEscrito" onchange="mostrarCamposExtras()" required>
+        <option value="">Seleccione un tipo de escrito</option>
+        <option value="excepcion_inoponibilidad">EXCEPCIÓN 7 INOP</option>
+        <option value="excepcion_autocontrato">EXCEPCION 14 AUTOCTTO</option>
+        <option value="excepcion_clinica">EXCEPCION 7 CLÍNICA</option>
+        <option value="excepcion_iliquidez">EXCEPCIÓN 7 ILIQUIDEZ</option>
+        <option value="excepcion_firma">EXCEPCIÓN 7 FIRMA</option>
+        <option value="exc_aceleracion">
+          EXCEPCIÓN 17 ACELERACIÓN PARCIAL
+        </option>
+        <option value="nep_vencimiento">NEP Vencimiento</option>
+        <option value="nep_aceleracion_vencimiento">
+          NEP Aceleración Vencimiento
+        </option>
+        <option value="ab6_sentencia">AB6 sentencia</option>
+        <option value="ab6_auto_prueba">AB6 auto de prueba</option>
+        <option value="se_provean_excepciones">
+          MON/EXC Se provean excepciones
+        </option>
+        <option value="se_reciba_causa_prueba">
+          MON/EXC Se reciba la causa a prueba
+        </option>
+        <option value="notificacion_auto_prueba">
+          MON/EXC Notificación auto de prueba
+        </option>
+        <option value="citacion_oir_sentencia">
+          MON/EXC Citación a oír sentencia
+        </option>
+        <option value="notificacion_sentencia_desbloqueo">
+          MON/EXC Notificación sentencia y desbloqueo
+        </option>
+        <option value="ejecutoria_excepciones">
+          MON/EXC Ejecutoria excepciones
+        </option>
+        <option value="se_provea_abandono">MON/AB Se provea abandono</option>
+        <option value="se_resuelva_abandono">
+          MON/AB Se resuelva abandono
+        </option>
+        <option value="ejecutoria_abandono">MON/AB Ejecutoria abandono</option>
+        <option value="apelacion_firma">APEL EXC 7 firma</option>
+        <option value="apelacion_autocontrato">APEL EXC 14 autocontrato</option>
+        <option value="apelacion_inoponibilidad">
+          APEL EXC 7 inoponibilidad
+        </option>
+        <option value="apelacion_iliquidez">APEL EXC 7 iliquidez</option>
+        <option value="repo_fea">REPO FEA ambas partes</option>
+        <option value="desbloqueo_causa">DESBLOQUEO</option>
+        <option value="devolucion_exhorto">Devolución exhorto</option>
+        <option value="notificacion_52">Solicita notificar por 52</option>
+      </select>
+
+      <div id="camposExtras" class="hidden">
+        <label id="labelFecha">Fecha de Sentencia:</label>
+        <input type="date" id="fechaSentencia" />
+
+        <div id="bloqueSuscriptorApelacion">
+          <label>Suscriptor:</label>
+          <input type="text" id="suscriptorApelacion" />
+        </div>
+
+        <div id="bloqueCorteApelaciones">
+          <label>Corte de Apelaciones:</label>
+          <select id="corteApelaciones">
+            <option value="">Seleccione una Corte</option>
+            <option value="I. Corte de Apelaciones de Santiago">
+              I. Corte de Apelaciones de Santiago
+            </option>
+            <option value="I. Corte de Apelaciones de San Miguel">
+              I. Corte de Apelaciones de San Miguel
+            </option>
+          </select>
+        </div>
+      </div>
+
+      <div id="ejecutadoExtras" class="hidden">
+        <label>Ejecutado:</label>
+        <input type="text" id="ejecutado" />
+
+        <label>Suscriptor:</label>
+        <input type="text" id="suscriptorExcepcion" />
+      </div>
+
+      <div id="desbloqueoCausa" class="hidden">
+        <label>Ejecutado:</label>
+        <input type="text" id="desbloqueo" />
+      </div>
+
+      <div id="nepExtras" class="hidden">
+        <label>Ejecutado:</label>
+        <input type="text" id="ejecutadoNep" />
+
+        <label id="labelFechaMora">Fecha mora:</label>
+        <input type="date" id="fechaMora" />
+
+        <label id="labelFechaDemandaNotificacion">Fecha demanda:</label>
+        <input type="date" id="fechaDemandaNotificacion" />
+      </div>
+
+      <button type="button" onclick="enviarFormulario()">
+        Generar Escrito
+      </button>
+    </form>
+    <script>
+      function mostrarCamposExtras() {
+        var tipoEscrito = document.getElementById("tipoEscrito").value;
+        var camposExtras = document.getElementById("camposExtras");
+        var ejecutadoExtras = document.getElementById("ejecutadoExtras");
+        var desbloqueoCausa = document.getElementById("desbloqueoCausa");
+        var labelFecha = document.getElementById("labelFecha");
+        var bloqueSuscriptorApelacion = document.getElementById(
+          "bloqueSuscriptorApelacion"
+        );
+        var bloqueCorteApelaciones = document.getElementById(
+          "bloqueCorteApelaciones"
+        );
+        var nepExtras = document.getElementById("nepExtras");
+        var labelFechaDemandaNotificacion = document.getElementById(
+          "labelFechaDemandaNotificacion"
+        );
+        var labelFecha = document.getElementById("labelFecha");
+
+        // NEP vencimiento y aceleración
+        if (
+          [
+            "nep_vencimiento",
+            "nep_aceleracion_vencimiento",
+            "exc_aceleracion",
+          ].includes(tipoEscrito)
+        ) {
+          nepExtras.classList.remove("hidden");
+          camposExtras.classList.add("hidden");
+          ejecutadoExtras.classList.add("hidden");
+          desbloqueoCausa.classList.add("hidden");
+          bloqueSuscriptorApelacion.classList.add("hidden");
+          bloqueCorteApelaciones.classList.add("hidden");
+          labelFechaMora.textContent = "Fecha mora:";
+
+          if (tipoEscrito === "exc_aceleracion") {
+            labelFechaDemandaNotificacion.textContent = "Fecha notificación:";
+          } else {
+            labelFechaDemandaNotificacion.textContent = "Fecha demanda:";
+          }
+        } else if (["ab6_sentencia", "ab6_auto_prueba"].includes(tipoEscrito)) {
+          camposExtras.classList.remove("hidden");
+          labelFecha.textContent = "Fecha gestión útil:";
+          bloqueSuscriptorApelacion.classList.add("hidden");
+          bloqueCorteApelaciones.classList.add("hidden");
+          nepExtras.classList.add("hidden");
+        } else if (
+          [
+            "apelacion_firma",
+            "apelacion_autocontrato",
+            "apelacion_inoponibilidad",
+            "repo_fea",
+            "apelacion_iliquidez",
+          ].includes(tipoEscrito)
+        ) {
+          camposExtras.classList.remove("hidden");
+          labelFecha.textContent = "Fecha de Sentencia:";
+          bloqueSuscriptorApelacion.classList.remove("hidden");
+          bloqueCorteApelaciones.classList.remove("hidden");
+          nepExtras.classList.add("hidden");
+        } else {
+          camposExtras.classList.add("hidden");
+          nepExtras.classList.add("hidden");
+        }
+
+        // Para campos Ejecutado y Suscriptor en excepciones
+        if (
+          ["excepcion_inoponibilidad", "excepcion_autocontrato"].includes(
+            tipoEscrito
+          )
+        ) {
+          ejecutadoExtras.classList.remove("hidden");
+          camposExtras.classList.add("hidden"); // Esconde los otros extras si están visibles
+        } else {
+          ejecutadoExtras.classList.add("hidden");
+        }
+
+        // Para campos Ejecutado en desbloqueo, excepción 7 firma, 7 clínica y 7 iliquidez
+        if (
+          [
+            "desbloqueo_causa",
+            "excepcion_firma",
+            "excepcion_clinica",
+            "excepcion_iliquidez",
+          ].includes(tipoEscrito)
+        ) {
+          desbloqueoCausa.classList.remove("hidden");
+        } else {
+          desbloqueoCausa.classList.add("hidden");
+        }
+      }
+
+      function enviarFormulario() {
+        var datos = {
+          tribunal: document.getElementById("tribunal").value,
+          rolCausa: document.getElementById("rolCausa").value,
+          caratulado: document.getElementById("caratulado").value,
+          tipoEscrito: document.getElementById("tipoEscrito").value,
+          fechaSentencia:
+            document.getElementById("fechaSentencia")?.value || "",
+          suscriptorApelacion:
+            document.getElementById("suscriptorApelacion")?.value || "",
+          suscriptorExcepcion:
+            document.getElementById("suscriptorExcepcion")?.value || "",
+          corteApelaciones:
+            document.getElementById("corteApelaciones")?.value || "",
+          desbloqueo: document.getElementById("desbloqueo")?.value || "",
+          ejecutado:
+            document.getElementById("ejecutadoNep")?.value ||
+            document.getElementById("ejecutado")?.value ||
+            "",
+          fechaMora: document.getElementById("fechaMora")?.value || "",
+          fechaDemanda: [
+            "nep_vencimiento",
+            "nep_aceleracion_vencimiento",
+          ].includes(document.getElementById("tipoEscrito").value)
+            ? document.getElementById("fechaDemandaNotificacion")?.value || ""
+            : "",
+
+          fechaNotificacion:
+            document.getElementById("tipoEscrito").value === "exc_aceleracion"
+              ? document.getElementById("fechaDemandaNotificacion")?.value || ""
+              : "",
+        };
+
+        // Selecciona dinámicamente el suscriptor correcto
+        if (
+          [
+            "apelacion_firma",
+            "apelacion_autocontrato",
+            "apelacion_inoponibilidad",
+            "repo_fea",
+          ].includes(tipoEscrito)
+        ) {
+          datos.suscriptor = document.getElementById(
+            "suscriptorApelacion"
+          ).value;
+        } else if (
+          ["excepcion_inoponibilidad", "excepcion_autocontrato"].includes(
+            tipoEscrito
+          )
+        ) {
+          datos.suscriptor = document.getElementById(
+            "suscriptorExcepcion"
+          ).value;
+        } else {
+          datos.suscriptor = "";
+        }
+
+        // URL publicada de tu proyecto actual en Google Apps Script
+        const urlGoogleScript =
+          "https://script.google.com/macros/s/AKfycbzlG_CWlvBUBhlIUR-eDv4Vmw0By8Vj5yl71-c8yAoEIUt83T4oQn6klMs-eZRbJw9h/exec";
+
+        fetch(urlGoogleScript, {
+          method: "POST",
+          mode: "no-cors", // importante para Google Script
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(datos),
+        })
+          .then((response) => {
+            alert("✅ Escrito generado correctamente.");
+          })
+          .catch((error) => {
+            alert("❌ Error generando escrito: " + error);
+          });
+
+        google.script.run
+          .withSuccessHandler(function (urlPDF) {
+            if (urlPDF.includes("https://")) {
+              window.open(urlPDF, "_blank");
+              alert("✅ PDF generado. Descárgalo y súbelo a la OJV.");
+            } else {
+              alert("⚠️ " + urlPDF);
+            }
+          })
+          .withFailureHandler(function (error) {
+            alert("❌ Error: " + error);
+          })
+          .generarEscritoDesdeWeb(datos);
+      }
+
+      document.addEventListener("DOMContentLoaded", mostrarCamposExtras);
+    </script>
+  </body>
+</html>
