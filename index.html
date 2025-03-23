@@ -409,12 +409,14 @@
 
        fetch(urlGoogleScript, {
     method: "POST",
-    mode: "cors", // <-- Cambia a "cors"
+    mode: "cors",
+    redirect: "follow",
     headers: {
       "Content-Type": "application/json"
     },
     body: JSON.stringify(datos)
   })
+
   .then(response => response.json())
   .then(data => {
     const urlPDF = data.url;
