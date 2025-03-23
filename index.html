@@ -419,6 +419,7 @@
   .then(data => {
     const urlPDF = data.url;
     descargarPDF(urlPDF); // descarga automáticamente
+    alert("✅ PDF generado y descargado correctamente.");
   })
   .catch(error => {
     alert("❌ Error generando escrito: " + error);
@@ -433,21 +434,6 @@ function descargarPDF(url) {
   a.click();
   document.body.removeChild(a);
 }
-
-        google.script.run
-          .withSuccessHandler(function (urlPDF) {
-            if (urlPDF.includes("https://")) {
-              window.open(urlPDF, "_blank");
-              alert("✅ PDF generado. Descárgalo y súbelo a la OJV.");
-            } else {
-              alert("⚠️ " + urlPDF);
-            }
-          })
-          .withFailureHandler(function (error) {
-            alert("❌ Error: " + error);
-          })
-          .generarEscritoDesdeWeb(datos);
-      }
 
       document.addEventListener("DOMContentLoaded", mostrarCamposExtras);
     </script>
